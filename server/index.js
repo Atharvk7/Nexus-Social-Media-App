@@ -14,7 +14,7 @@ app.use(cors())
 app.use('/posts',postRoutes);
 app.use('/user', userRoutes)
 
-const Connection_url="Enter Your URL"
+const Connection_url="Enter Your URL" || process.env.MONGO_URI
 const PORT = process.env.PORT || 5000;
 mongoose.connect(Connection_url,{useNewUrlParser:true,useUnifiedTopology:true})
 .then(()=>app.listen(PORT, ()=>console.log("Server is running on port 5000, Database is connected successfully")))
